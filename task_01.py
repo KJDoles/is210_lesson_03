@@ -5,4 +5,3 @@
 
 QUESTION_01 = raw_input('What is your favorite color?' )
 QUESTION_02 = int(raw_input('What is your lucky number?' ))
-
