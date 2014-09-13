@@ -17,4 +17,3 @@ else:
     BP_STATUS = "Emergency"
 
 print 'Your blood pressure is at a {} level, act accordingly.'.format(BP_STATUS)
-
