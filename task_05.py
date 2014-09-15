@@ -63,9 +63,9 @@ else:
 
 TOTAL = 0
 if INT_RATE == None:
-    TOTAL = None
+    return TOTAL
 else:
-    TOTAL = PRINC * (1 + (INT_RATE // 12))^(12 * YEARS)
+    TOTAL = round(PRINC * (1 + (INT_RATE // 12))^(12 * YEARS))
     
 
                  
