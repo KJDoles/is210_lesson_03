@@ -8,5 +8,5 @@ TIME = raw_input('What time is it in a four digit number, no ":"? ')
 SNOOZE = True
 
 SNOOZE = True if DAY == 'sat' or DAY == 'sun' or TIME < '0600' else False
-if SNOOZE != True:
+if False:
     print 'Beep! Beep! Beep! Beep! Beep!'
