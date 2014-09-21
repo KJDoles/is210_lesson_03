@@ -5,10 +5,12 @@
 
 import decimal
 NAME = raw_input('What is your name? ')
-PRINC = int(raw_input('How much will you be borrowing? '))
-YEARS = int(raw_input('How many years are you borrowing for? '))
+PRINC = decimal.Decimal(raw_input('How much will you be borrowing? '))
+YEARS = decimal.Decimal(raw_input('How many years are you borrowing for? '))
 PRE_QUAL = raw_input('Have you been pre-qualified for a loan? ').lower()[0]
+n = decimal.Decimal('12')
 INT_RATE = None
+
 
 if 0 <= PRINC <= 199999:
     if 1 <= YEARS <= 15:
@@ -63,9 +65,17 @@ else:
 
 TOTAL = 0
 if INT_RATE == None:
-    return TOTAL
+    TOTAL = 0
 else:
-    TOTAL = round(PRINC * (1 + (INT_RATE // 12))^(12 * YEARS))
-    
+    TOTAL = round(PRINC * pow((1 + (INT_RATE / n)),(n * YEARS)))
 
-                 
+REPORT = ('Loan Report for: {} \n'.format(NAME)
+          + "-"*40 + '\n'
+          '\t Principal: \t ${:>7,} \n'.format(PRINC)+
+          '\t Duration: \t {:>9} \n'.format(YEARS)+
+          '\t Pre-qualified: \t {} \n'.format(PRE_QUAL)+
+          '\n'
+          '\t Total: \t ${:>1,}'.format(TOTAL))
+          
+          
+
